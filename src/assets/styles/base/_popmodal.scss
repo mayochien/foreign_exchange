@@ -1,0 +1,765 @@
+.styles_modal__gNwvD{
+background-color: $table-bg-color ;
+box-shadow: 1px 1px 6px rgb(15, 15, 15);
+border-radius: 5px;
+width: 30%;
+min-width: 310px;
+top: 15%;
+
+  .styles_closeButton__20ID4{ //關閉按鈕
+    &:hover{
+      background: $primary-color-l-30;
+      border-radius: 3px;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .modal-action-button{ //底部通用btn樣式 (確認、關閉)
+    border: none !important;
+    background: $btn-bg-color;
+    color: $primary-text-color ;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 8px;
+    padding: 8px 14px;
+    transition: .3s;
+    &:hover{
+      background: $btn-bg-hover-color;
+      color: $primary-text-active-color;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .modal-action-only-read{ // only read樣式 ex:等待只能按一次
+    background: $primary-color-l-40 !important;
+    color: $primary-color-l-25 !important;
+    cursor: not-allowed;
+    // pointer-events: none;
+  }
+
+  .modal-inside{
+    border: none;
+    background-color: $table-bg-color;
+    box-shadow: none;
+    color: $primary-text-color ;
+    padding: 18px 0;
+    h5{
+      margin: 18px 0;
+      font-size: 16px !important;
+      text-align: center;
+      font-weight: bold;
+    }
+    .warining-icon-section{
+      .FiAlertCircle{
+        width: 22px !important;
+        height: 22px !important;
+      }
+    }
+    .modal-body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      font-size: 14px;
+      .upload-btn{
+        max-width: 180px;
+        border-radius: 2px !important;
+        margin-bottom: 8px;
+        &:focus{
+          outline: none;
+        }
+      }
+      .modal-body-text-section{
+        width: 100%;
+        background: $table-header-bg-color;
+        margin: 10px auto;
+        padding: 14px 12px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 2rem;
+
+        .bank-info-line{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 5px;
+          .info-label{
+            width: 38%;
+            min-width: 130px;
+            // background: #6c6;
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-align: right;
+            margin-right: 4px;
+            font-size: 10px !important;
+          }
+          .info-value{
+            width: 55%;
+            max-width: 210px;
+            margin-left: 4px;
+            padding-left: 8px;
+            background:$btn-bg-color;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 12px !important;
+            letter-spacing: 1.2px;
+            border: none;
+            pointer-events: none;
+          }
+          .info-btn{
+            width: 6%;
+            min-width: 26px;
+            text-align: center;
+            .btn-copy{
+              background: transparent;
+              border: none;
+              padding: 0;
+              transition: .2s;
+              &:focus{
+                outline: none;
+              }
+              &:hover{
+                color:$primary-color-d-5;
+              }
+            }
+          }
+
+        }
+      }
+
+      .modal-body-photo-section{ 
+        width: 100%;
+        // height: 270px;
+        // background: #222;
+        .main-photo-section{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          height: 250px;
+          width: 100%;
+          background: $btn-bg-color  ;
+          .main-photo-box{
+            width:100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .upload-label{
+              height: 100%;
+              width: 100%;
+              padding: 2px;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background: $table-header-bg-color;
+              color: $primary-text-color ;
+              font-size: 14px;
+              &:hover{
+                transition: .3s;
+                background: $primary-color-l-35;
+                cursor: pointer;
+              }
+              .upload_icon_big{ //此為圖片，無法直接改變顏色
+                width: 60px;
+              }
+              .upload-input-btn{ // 真正具有功能的﹝選擇檔案﹞按鈕
+                width: 0px;
+                height: 0px;
+              }
+            }
+
+            .btn-cancel-photo{
+              width: 18px;
+              height: 17px;
+              padding: 0;
+              margin: -10px 5px 3px auto;
+              border: none;
+              border-radius: 2px ;
+              background: $primary-color-l-15;
+              color: #eee;
+              font-size: 10px;
+              &:hover{
+                transition: .2s;
+                background: $btn-bg-active-color ;
+              }
+            }
+            .preview-image{
+              max-width: 98%;
+              max-height: 210px;
+              transition:0.8s;
+              &:focus{
+                outline: none;
+              }
+            }
+          }
+        }
+
+        .continue-upload-label{
+          min-width: 56px;
+          border: none ;
+          background: $btn-bg-color ;
+          color: $btn-text-color;
+          border-radius: 4px;
+          font-size: 14px;
+          margin: 4px 4px;
+          padding: 4px 10px;
+
+          &:hover{
+            transition: .3s;
+            background: $blue-color ;
+            color:$btn-text-active-color  ;
+            cursor: pointer;
+          }
+          &:focus{
+            outline: none;
+          }
+          .upload-input-btn{ // 真正具有功能的﹝選擇檔案﹞按鈕
+            width: 0px;
+            height: 0px;
+          }
+        }
+
+        // 下方 5 張小圖
+        .list-photo-section{ 
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .small-photo-box{
+            width: 64px;
+            height: 44px;
+            background: rgba(87, 85, 76, 0.3) ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 0.8%;
+            .upload-label-small{  // 沒有圖片時的樣式 (點選上傳)
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              &:hover{
+                transition: .3s;
+                background: rgba(102, 99, 93, 0.5) ;
+              }
+              .upload-input-btn-small{ // 真正具有功能的﹝選擇檔案﹞按鈕
+                width: 0;
+                height: 0;
+              }
+            }
+            .btn-small-photo{  // 已經有圖片時的樣式
+              width: 100%;
+              height: 100%;
+              border: none;
+              padding: 0;
+              background: transparent;
+              &:hover{
+                transition: .3s;
+                background: $btn-bg-hover-color ;
+              }
+              &:focus{
+                outline: none;
+              }
+              .photo-small{
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .modal-body-photo-zoomin-customer-service{
+        top:27%;
+        left:42%;
+        position: fixed;
+        display: flex;
+        .zoomin-image{
+          max-width: 1200px;
+          max-height: 800px;
+          width: 250%;
+          height: 250%;
+          position: relative;
+          left: 4%;
+          @media (max-width:500px) {
+            max-width: 480px;
+          }
+        }
+        .btn-zoom-in-closex{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          position: relative;
+          // right: 5px;
+          margin: 6px;
+          padding: 3px;
+          background: #666;
+          border-radius: 3px;
+          border: none !important;
+          transition:0.2s;
+          font-size: 22px;
+          width: 28px;
+          height: 28px;
+          color: #fff;
+          &:hover{
+            cursor: pointer;
+            background: $primary-color-d-10;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+
+      .modal-body-photo-zoomin-section{ //交易用
+        margin: 0 auto;
+        position: fixed;
+        display: flex;
+        .zoomin-image{
+          max-width: 1200px;
+          max-height: 800px;
+          width: 250%;
+          height: 250%;
+          position: relative;
+          left: 4%;
+          @media (max-width:500px) {
+            max-width: 480px;
+          }
+        }
+        .btn-zoom-in-close{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          position: relative;
+          margin: 6px;
+          left: 4%;
+          padding: 3px;
+          background: #666;
+          border-radius: 3px;
+          border: none !important;
+          transition:0.2s;
+          font-size: 22px;
+          width: 28px;
+          height: 28px;
+          color: #fff;
+          &:hover{
+            cursor: pointer;
+            background: $primary-color-d-10;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+      @media (max-width:768px) {
+        .btn-zoom-in{
+          display: none;
+        }
+      }
+      .btn-zoom-in{
+        margin-top: 10px;
+        background: transparent;
+        border: none !important;
+        transition:0.2s;
+        padding: 0;
+        width: 20px;
+        font-size: 24px;
+        &:hover{
+          cursor: pointer;
+          color: $primary-color;
+          transform: scale(1.3);
+        }
+        &:focus{
+          outline: none;
+        }
+      }
+
+      .select-bank-card-box{ // orderList 選擇銀行帳戶彈框
+        max-height: 380px;
+        width: 97%;
+        background: $table-header-bg-color ;
+        overflow: auto;
+        padding: 10px 8px;
+        margin-bottom: 10px;
+        text-align:center;
+        display: flex;
+        flex-direction: column;
+
+        .select-bank-card{
+          margin: 5px auto !important;
+          padding: 8px;
+          min-width: 220px;
+          max-width: 350px;
+          background: $primary-color-l-30 ;
+          border: none ;
+          border-radius: 5px;
+          font-size: 14px;
+          color: $primary-text-color ;
+          line-height: 1.4rem;
+          letter-spacing: 1.5px;
+          transition: .3s;
+          &:hover{
+            cursor: pointer;
+            background: $primary-color-l-20 ;
+          }
+          &:focus {
+            outline: none;
+            color:$primary-color-l-45;
+            background: linear-gradient(180deg,
+            $primary-color-l-15,
+              $primary-color-l-10,
+            $primary-color-l-15,
+              $primary-color-l-10,
+            $primary-color-l-15,
+              $primary-color-l-10,
+            );
+            background-size: 600% 500%;
+            // border: 1.5px solid $primary-color-l-10;
+
+            -webkit-animation: background-animation 15s ease infinite;
+            -moz-animation: background-animation 15s ease infinite;
+            animation: background-animation 15s ease infinite;
+            @-webkit-keyframes background-animation {
+              0%{background-position:50% 0%}
+              50%{background-position:50% 100%}
+              100%{background-position:50% 0%}
+            }
+            @-moz-keyframes background-animation {
+              0%{background-position:50% 0%}
+              50%{background-position:50% 100%}
+              100%{background-position:50% 0%}
+            }
+            @keyframes background-animation {
+              0%{background-position:50% 0%}
+              50%{background-position:50% 100%}
+              100%{background-position:50% 0%}
+            }
+
+          }
+        }
+      }
+    }
+
+    .imgBox {
+      width: 320px;
+      height: 200px;
+      background-color: #33393c;
+      border-radius: 5px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media(max-width: 1340px){
+        width: 330px;
+        height: 190px;
+      }
+      @media(max-width: 1024px){
+        width: 240px;
+        height: 180px;
+      }
+      @media(max-width: 769px){
+        width: 300px;
+        height: 180px;
+        margin-left: 156px;
+      }
+      @media(max-width: 585px){
+        width: 350px;
+        height: 200px;
+        margin-left: 37px;
+      }
+      @media(max-width: 415px){
+        width: 290px;
+        height: 175px;
+        margin-left: 12px;
+      }
+      @media(max-width: 375px){
+        width: 273px;
+        height: 175px;
+        margin-left: 0;
+      }
+      @media(max-width: 320px){
+        width: 220px;
+        height: 175px;
+        margin-left: 0;
+      }
+    }
+
+    .imgBox > img {
+      max-width: 100%;
+      max-height: 100%;
+      background-size: cover;
+    }
+
+    .imgBox .zoomInImg {
+      max-width: 140%;
+      max-height: 140%;
+      background-size: cover;
+    }
+
+    .remark-input-section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background: #922;
+      margin: 6px 8px;
+      .remark-label{
+        width: 60px;
+        text-align: right;
+        line-height: 28px;
+        pointer-events: none;
+      }
+      .remark-input{
+        width: 80%;
+        border:none;
+        min-width: 190px;
+        padding: 4px 8px;
+        background: $table-header-bg-color;
+        color: $primary-text-color ;
+      }
+      .remark-input-readonly{
+        width: 80%;
+        min-width: 180px;
+        padding: 4px 8px;
+        background: $primary-color-l-40 ;
+        border:none;
+        color: $primary-color-d-1;
+        pointer-events: none;
+      }
+    }
+
+    .modal-body-hr{
+      // margin-top: 6px;
+      margin-bottom: 16px;
+      background: $table-header-bg-color  ;
+      height: 2px;
+      border-radius: 2px;
+    }
+
+    .modal-body-rate{
+      .rate-line-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 8px 0;
+        .rate-line-info-box{
+          width: 33%;
+          text-align: center;
+          margin: 0;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          .rate-line-text{
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1.1px;
+          }
+          .rate-line-number{
+            width: 42%;
+            padding: 1px 0 ;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+          }
+        }
+        .rate-arrow{
+          width: 26px;
+          margin: 0 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          svg{
+            padding-top: 2px;
+            font-size: 26px;
+          }
+        }
+      }
+
+      .rate-line-answer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        .rate-line-rate{
+          width: 36%;
+          padding: 10px 0 ;
+          margin: 0 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          color: $primary-color-d-5;
+          background: rgba(43, 41, 37, 0.815);
+        }
+      }
+
+    }
+
+    .modal-footer{
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 0 4px 0;
+      button{
+        border: none !important;
+        background: $btn-bg-color;
+        color: $primary-text-color ;
+        border-radius: 4px;
+        box-shadow: none !important;
+        font-size: 14px;
+        margin: 0 8px;
+        padding: 8px 14px;
+        transition: .3s;
+        &:hover{
+          background: $btn-bg-hover-color;
+          color: $primary-text-active-color;
+        }
+        &:focus{
+          outline: none;
+        }
+      }
+      label{
+        background: #922 !important ;
+      }
+
+    }
+
+    .btn-upload{
+      border: none !important;
+      background: $btn-bg-color;
+      color: $btn-text-color  ;
+      border-radius: 4px;
+      box-shadow: none !important;
+      font-size: 14px;
+      margin: 4px 4px;
+      padding: 4px 24px;
+      &:hover{
+        background: $btn-bg-hover-color;
+        color: $btn-text-active-color ;
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+
+    .btn-upload-highlight {
+      border: none !important;
+      background: $btn-bg-color;
+      color: $btn-text-color ;
+      border-radius: 4px;
+      box-shadow: none !important;
+      font-size: 14px;
+      margin: 4px 4px;
+      padding: 4px 24px;
+      &:focus{
+        outline: none;
+      }
+      animation: blinkingAddBtn ;
+      animation-duration: 1.6s;
+      // animation-delay: 0.2s;
+      @keyframes blinkingAddBtn {
+        0%{background: lighten($text-red,5%)}
+        65%{background: lighten($text-red,10%)}
+        75%{background: lighten($text-red,15%)}
+        85%{background: lighten($text-red,20%)}
+        100%{background: $btn-bg-color ;}
+      }
+    }
+
+    .modal-footer-mini{
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 14px 0 0 0;
+    }
+
+    // 驗證手機彈框
+    .phone-verify-input{
+      padding: 4px 5px;
+      width: 120px;
+      font-size: 17px;
+      font-weight: bold;
+      text-align: center;
+      border: 2px solid $primary-color-l-15 !important;
+      border-radius: 3px !important;
+    }
+
+  } // ------------ modol-inside結束 --------------
+
+
+  .styles_closeButton__20ID4{ //關閉按鈕
+    svg{
+      color: #aaa !important;
+      path{
+        color: #aaa !important;
+        background: #fff !important;
+      }
+    }
+  }
+
+  .link-text{
+    color: #aaa;
+    transition: .3s;
+    &:hover{
+      color: #eee;
+    }
+  }
+
+}
+
+
+
+// ████████      █                  █     ███████
+//  █     ██     ██       ██       ██      █     ██
+//  █      ██     ██     █  █     ██       █       ██
+//  █     ██       ██   █    █   ██        █        ██
+//  ███████         █  █      █  █         █       ██
+//  █     ██         ██        ██          █     ██
+// ██      ██         █        █          ███████
+
+
+@media(max-width:1200px){
+  .styles_modal__gNwvD{
+    width: 40% !important;
+    min-width: 340px !important;
+  }
+}
+
+
+@media(max-width:480px){
+.styles_modal__gNwvD{
+  width: 60% !important;
+  min-width: 310px !important;
+  .modal-body{
+   padding: 12px 0 !important;
+  }
+  .select-bank-card-box{
+    width: 99% !important;
+  }
+}
+}

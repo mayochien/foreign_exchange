@@ -1,0 +1,67 @@
+# one stage for many job
+stages:
+  - build
+  - test
+
+deploy-to-server:
+  stage: build
+  before_script:
+    - docker-compose build
+  script:
+    - docker-compose down
+    - docker-compose up -d
+    - docker exec foreign_exchange_banker bash -c 'echo "export const DOMAIN = \"http://bankerapi.gamefair365.net\"" > src/config.js'
+    - docker exec foreign_exchange_banker bash -c 'echo "export const STATIC_DOMAIN = \"http://static.dexdex.com\"" >> src/config.js'
+    - echo "Build successful!"
+  allow_failure: false
+  only:
+    - develop
+  tags:
+    - foreign_exchange_banker
+  # except:
+  #   - tags
+
+test-to-server:
+  stage: test
+  script:
+  - echo "Test successful!"
+  allow_failure: false
+  only:
+    - develop
+  tags:
+    - foreign_exchange_banker
+  dependencies:
+    - deploy-to-server
+
+deploy-to-UAT:
+  stage: build
+  before_script:
+    - sed -i 's/foreign_exchange_banker/uat_foreign_exchange_banker/g' docker-compose.yml
+    - sed -i 's/8082/8092/g' docker-compose.yml
+    - docker-compose build
+  script:
+    - docker-compose down
+    - docker-compose up -d 
+    - docker exec uat_foreign_exchange_banker bash -c 'echo "export const DOMAIN = \"http://bankerapi.uat.gamefair365.net\"" > src/config.js'
+    - docker exec uat_foreign_exchange_banker bash -c 'echo "export const STATIC_DOMAIN = \"http://static.dexdex.com\"" >> src/config.js'
+    - echo "Build successful!"
+  allow_failure: false
+  only:
+    - UAT
+  tags:
+    - foreign_exchange_banker
+  # except:
+  #   - tags
+
+test-to-UAT:
+  stage: test
+  script:
+    - echo "Test successful!"
+  allow_failure: false
+  only:
+    - UAT
+  tags:
+    - foreign_exchange_banker
+  dependencies:
+    - deploy-to-UAT
+

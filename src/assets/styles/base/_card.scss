@@ -1,0 +1,660 @@
+.empty {
+    border: 1px solid $primary-color;
+    padding: 300px;
+    margin: 200px;
+    text-align: center;
+    color: $primary-color;
+    font-size: 48px;
+}
+
+// ***************************************************************************
+// ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ card-exchange ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+.card-exchange {
+    padding: 10px 20px 20px 20px;
+    background: $primary-white; //卡片底色
+    color: rgb(200, 200, 200);
+    box-shadow: 0px 0px 3px #ccc;
+    p {
+        color: rgb(200, 200, 200) !important;
+    }
+    .ct-label,
+    .ct-vertical,
+    .ct-start {
+        color: rgb(200, 200, 200) !important;
+    }
+    foreignObject {
+        color: rgb(200, 200, 200) !important;
+        span {
+            color: rgb(200, 200, 200) !important;
+        }
+    }
+    .header {
+        .title {
+            margin: 0;
+            padding: 10px 0 26px 0;
+        }
+    }
+    
+
+
+    .input-upload {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .content {
+        padding: 10px;
+        .content-top-menu {
+            margin-bottom: 20px;
+            margin-right: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        // display: flex;
+        // align-items: center;
+        label {
+            font-size: 14px;
+            font-family: "微軟正黑體", "Open Sans";
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: rgb(200, 200, 200);
+            // padding-top: 7px;
+            margin-bottom: 0;
+            text-align: right;
+            line-height: 33px !important;
+        }
+        input { // ▇▇▇▇▇▇▇▇▇▇ 【主要】 所有input  ▇▇▇▇▇▇▇▇▇▇
+            background-color: $primary-color-l-35 ;
+            width: 100% ;
+            padding: 6px 16px !important;
+            box-sizing: border-box;
+            height: 33px;
+            border: none;
+            border-radius: 18px !important;
+            color: $primary-text-color ;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-family: "微軟正黑體", "Open Sans";
+            font-weight: bold;
+            letter-spacing: 1px;
+            &:focus {
+                outline: none;
+            }
+        }
+        .popup-action-btn {
+            border: none !important;
+            background: $btn-bg-color;
+            color: $primary-text-color ;
+            border-radius: 4px;
+            box-shadow: none !important;
+            font-size: 14px;
+            margin: 0 8px;
+            padding: 2px 12px;
+            transition: .3s;
+            &:hover{
+                cursor: pointer;
+                background: $btn-bg-hover-color;
+                color: $primary-text-active-color;
+              }
+              &:focus{
+                outline: none;
+              }
+        }
+        .popup-action-btn-down {
+            border: none !important;
+            background: $btn-bg-color;
+            color: $primary-text-color ;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 0 8px;
+            padding: 2px 12px;
+            transition: .3s;
+            &:hover{
+              cursor: pointer;
+              background: $btn-bg-hover-color;
+              color: $primary-text-active-color;
+            }
+            &:focus{
+              outline: none;
+            }
+        }
+        .form-left {
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .form-right {
+            height: 32px;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start;
+        }
+
+        .col-md-3-input {
+            // 拆分左右的input
+            width: 90%;
+            @media(max-width: 1280px) {
+                width: 100%;
+            }
+        }
+        .col-md-3-slelect {
+            width: 90%;
+            @media(max-width: 1280px) {
+                width: 100%;
+            }
+        }
+        .form-right-radio-checkbox {
+            //remark
+            // width: 150px ;
+            display: flex;
+            align-items: center;
+            padding-left: 16px;
+            .input-radio {
+                width: 30px;
+                height: 16px;
+                margin-right: 12px;
+            }
+            .radio-label {
+                margin-left: 12px;
+            }
+        }
+        .input-right-separate-label {
+            //remark
+            width: 13%;
+            min-width: 74px;
+            text-align: center;
+        }
+        .input-right-separate-input {
+            width: 87%;
+            min-width: 80px;
+            max-width: 380px;
+        }
+
+        .select-box {
+            //下拉
+            height: 30px;
+            margin-top: 1.5px;
+            // min-width: 80px;
+            background: #666;
+            border: none;
+            border-radius: 6px;
+            text-align: center;
+            padding: 0 10px;
+            &:hover {
+                cursor: pointer;
+            }
+            .select-option,
+            option {
+                padding: 4px 10px;
+                border: none;
+                border-radius: 6px;
+                // color: #FB404B;
+                &:hover {
+                    background: $primary-color !important;
+                }
+            }
+        }
+        
+        table,
+        .table-exchange {
+            color:  $primary-text-color ;
+            thead {
+                background: $table-header-bg-color;
+                // background: rgb(16, 16, 16);
+                tr {
+                    th { //▇▇▇▇▇▇▇▇▇▇ table標題在這 ▇▇▇▇▇▇▇▇▇▇
+                        border-bottom: none;
+                        padding: 8px 8px;
+                        text-align: center !important;
+                        font-weight: bold;
+                        &:first-child {
+                            min-width: 58px ;
+                        }
+                        .order {
+                            padding-left: 2px;
+                            .dropup {
+                                padding-left: 1px;
+                            }
+                        }
+                    }
+                    .th-no-data{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 8px 0 !important;
+                    }
+                }
+                .tr-double-first{
+                    th {
+                        padding: 4px;
+                        background: $table-header-bg-color;
+                        border-top: none;
+                        color: $primary-text-color !important;
+                        // border-top: 1px solid #444;
+                    }
+                }
+                .tr-double-second{
+                    th {
+                        // background: #911;
+                        border-top: 1px solid $table-border-color ;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    background: $table-bg-color;
+                    // background: rgb(24, 24, 24);
+                    // display: flex;
+                    // align-items: center;
+                    // flex-direction: row;
+                    td { //▇▇▇▇▇▇▇▇▇▇ table內容在這 ▇▇▇▇▇▇▇▇▇▇
+                        border-top: 1px solid $primary-color-l-30;
+                        text-align: center !important;
+                        font-weight: bold;
+                        .img-container {
+                            img {
+                                width: 40px;
+                            }
+                        }
+                        .td-input {
+                            //代理清單
+                            border-radius: 0px !important;
+                            height: 19px !important;
+                            max-width: 100px !important;
+                            min-width: 60px !important;
+                            padding: 0 5px !important;
+                        }
+                        .td-input-product {
+                            margin-right: 4px;
+                            border-radius: 0px !important;
+                            height: 20px !important;
+                            width: 35%;
+                            max-width: 100px !important;
+                            padding: 0 5px !important;
+                        }
+                        .td-input-order {
+                            //所有外匯單
+                            margin: 0 2px;
+                            border-radius: 0px !important;
+                            height: 20px !important;
+                            width: 94%;
+                            font-size: 10px;
+                            // max-width: 80px !important;
+                            // min-width: 50px !important;
+                            padding: 0 6px !important;
+                        }
+                    }
+                    .td-actions-icon { //我的掛單開關
+                        // display: flex;
+                        vertical-align: middle;
+                        padding: 0;
+                        .card-icon-link {
+                            padding: 8px 14px;
+                            &:hover {
+                                color: $primary-color-l-5;
+                                text-decoration: none;
+                            }
+                            .icon {
+                                font-size: 16px !important;
+                                font-weight: bold;
+                                color: #fff !important;
+                                &:hover {
+                                    color: $primary-color-l-5 !important;
+                                }
+                            }
+                        }
+                    }
+                    .td-switch {
+                        padding-top: 5px;
+                        min-width: 110px;
+                    }
+                    .td-no-data{
+                        max-width: 2px !important;
+                        padding: 0 !important;
+                    }
+                }
+
+                .tr-vertical-line{ // 加垂直分隔線
+                    td{
+                        border-right: 1px solid $table-border-color ;
+                        &:last-child{
+                            border-right: none;
+                        }
+                    }
+                }
+                .tr-total-text {
+                    color: $primary-text-color ;
+                    background: $table-header-bg-color;
+                    font-size: 15px;
+                }
+                .tr-active {
+                    // 點通知-> 進入詳細頁active
+                    animation: blinkingText;
+                    animation-duration: 2.5s;
+                    animation-delay: 0.3s;
+                }
+                @keyframes blinkingText {
+                    0% {
+                        background: $blue-color;
+                    }
+                    49% {
+                        background: transparent;
+                    }
+                    50% {
+                        background: transparent;
+                    }
+                    99% {
+                        background: transparent;
+                    }
+                    100% {
+                        background: transparent;
+                    }
+                }
+            }
+            .table-no-data {
+                background: $table-bg-color ;
+                text-align: center;
+                padding: 40px 0;
+            }
+            .hidden-check1 {
+                display: none;
+            }
+            .hidden-check2 {
+                visibility: hidden;
+            }
+        }
+    }
+    //拉條
+    // .slider-box {
+    //     // display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     .slider-info-box {
+    //         // width: 24%;
+    //         display: flex;
+    //         justify-content: flex-start;
+    //         align-items: center;
+    //         padding-bottom: 10px;
+    //         padding-left: 10px;
+    //         .slider-btn {
+    //             min-width: 70px;
+    //             margin-top: 0;
+    //             margin-right: 12px;
+    //             padding: 8px 20px;
+    //         }
+    //         .active-btn {
+    //             background: $primary-color;
+    //             color: #fff !important;
+    //         }
+    //         .show-value {
+    //             // min-width: 70px;
+    //             padding: 10px 10px;
+    //             text-align: center;
+    //             font-size: 16px;
+    //             font-weight: bold;
+    //             .show-value-origin {
+    //                 margin-right: 14px;
+    //                 color: $primary-color-l-5;
+    //             }
+    //             svg {
+    //                 padding-top: 4px;
+    //                 font-size: 18px;
+    //                 color: #ddd;
+    //             }
+    //             .show-value-update {
+    //                 margin-left: 14px;
+    //                 color: #ddd;
+    //             }
+    //         }
+    //     }
+        // .fee-rate-slider-not-modify {
+        //     // 不能編輯時的樣式
+        //     background: $gray-850 !important;
+        //     pointer-events: none;
+        //     .rangeslider__handle {
+        //         //操控的圓點
+        //         width: 0 !important;
+        //         height: 0px !important;
+        //         background: $primary-color-d-10 !important;
+        //     }
+        // }
+        // .fee-rate-slider {
+        //     // width: 76%;
+        //     // margin-bottom: 1.5rem;
+        //     padding: 5px 25px;
+        //     background: $gray-650;
+        //     border-radius: 40px;
+        //     .rangeslider {
+        //         // 未填滿的區域
+        //         background: $gray-400;
+        //         justify-content: center;
+        //         margin: 16px auto;
+        //         // width: 90%;
+        //         // lighten($primary-color,5%)2%,
+        //         .rangeslider__fill {
+        //             //填滿的區域
+        //             background-image: linear-gradient(180deg, darken($primary-color, 4%) 5%, darken($primary-color, 3%) 12%, darken($primary-color, 1%)20%, lighten($primary-color, 3%)45%, darken($primary-color, 2%)65%, darken($primary-color, 8%) 85%, );
+        //             box-shadow: none;
+        //         }
+        //         .rangeslider__handle {
+        //             //操控的圓點
+        //             width: 23px;
+        //             height: 23px;
+        //             outline: none;
+        //             border: none;
+        //             background: $primary-color-l-10;
+        //             box-shadow: 0.5px 0.5px -0.5px $gray-300;
+        //         }
+        //         .rangeslider__handle:after {
+        //             display: none;
+        //         }
+        //     }
+        // }
+    // }
+    .banker-user-slider {
+        .rangeslider {
+            background: rgb(199, 102, 118) !important;
+            .rangeslider__fill {
+                //填滿的區域
+                background: rgb(61, 147, 168) !important;
+            }
+        }
+    }
+    .footer {
+        color: rgb(100, 100, 100);
+    }
+
+}
+
+// ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ card-exchange ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
+// *************************************************************************
+
+
+.card {
+    // border: 1px solid #333;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    .title {
+        color: $primary-color;
+        font-weight: 300;
+    }
+    .header {
+        padding: 15px 30px 0px;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $primary-text-color ;
+            line-height: 17px;
+            font-family: "微軟正黑體", "Open Sans";
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        p {
+            color: $primary-text-color ;
+            font-size: 12px;
+            line-height: 17px;
+            font-weight: 300;
+        }
+    }
+    .form-group label,
+    fieldset label {
+        line-height: 18px;
+        color: $primary-text-color ;
+        &.control-label {
+            text-transform: uppercase;
+        }
+        &.error {
+            text-transform: none;
+            color: $text-red;
+            margin-top: 5px;
+        }
+    }
+    .form-group { 
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9,
+        .col-md-10 .col-md-11,
+        .col-md-12 { // ▇▇▇▇▇▇▇▇▇▇ 所有input 文字在這 ▇▇▇▇▇▇▇▇▇▇
+            height: 33px;
+            line-height: 33px;
+            font-weight: bold;
+        }
+        .col-md-12 {
+            text-align: center;
+        }
+    }
+    .submit-alert-section {
+        //表單下方 送出成功彈出的訊息
+        margin-top: -10px;
+        .submit-alert-text {
+            height: 20px;
+            // background: #333;
+        }
+    }
+    .page-section {
+        //頁數切換
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        margin-bottom: 2px;
+        .page-btn {
+            padding: 0 2px;
+            border: none;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            &:hover {
+                text-decoration: none;
+                cursor: pointer;
+                color: $primary-color;
+            }
+            &:focus {
+                outline: none;
+                color: $primary-color-l-5;
+            }
+            &:active {
+                color: $primary-color-l-5;
+            }
+        }
+        .page-separation {
+            height: 10px;
+            width: 1px;
+            background: #555;
+            display: flex;
+            align-items: center;
+            margin: 0 3px;
+        }
+    }
+    .footer {
+        padding: 0 30px 5px;
+        background-color: transparent;
+        line-height: 30px;
+        .legend {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            .item {
+                margin-right: 10px;
+            }
+        }
+        .stats {
+            color: $medium-dark-gray;
+        }
+        hr {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-color: $medium-gray;
+        }
+    }
+}
+
+
+// ████████      █                  █     ███████
+//  █     ██     ██       ██       ██      █     ██
+//  █      ██     ██     █  █     ██       █       ██
+//  █     ██       ██   █    █   ██        █        ██
+//  ███████         █  █      █  █         █       ██
+//  █     ██         ██        ██          █     ██
+// ██      ██         █        █          ███████
+@media(min-width:1280px) {
+    // ↑↑↑↑↑↑↑
+    .card,
+    .card-exchange {
+        .content {
+            .form-group {
+                button {
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1280px) {
+    .card,
+    .card-exchange {
+        .content {
+            label {
+                // padding: 7px 15px 2px 24px;
+            }
+            .form-left {
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+@media(max-width:767px) {
+    .table-responsive {
+        border: none;
+    }
+}
+
+@media(max-width:550px) {
+    .card,
+    .card-exchange {
+        padding: 10px 12px 10px;
+        .header {
+            padding: 15px 5px 00px;
+        }
+        .content {
+            padding: 10px 5px 20px;
+        }
+        .footer {
+            padding: 0px 5px 5px;
+        }
+    }
+}

@@ -1,0 +1,340 @@
+
+
+.sidebar {
+  max-height: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $sidebar-width;
+  display: block;
+  z-index: 1;
+  color: $sidebar-color;
+  font-weight: 200;
+  transition-duration: .2s, .2s, .35s;
+  background-color: $sidebar-bg;
+
+  .sidebar-wrapper {
+    background-color: $sidebar-bg;
+    height: calc(100vh - 52px);
+    overflow: auto;
+  }
+  .brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background: $blue-color;
+    // background-color: darken($sidebar-bg,5%);
+    .logo {
+      width: 150px;
+      margin-left: 40%;
+    }
+    .brand-name {
+      font-family: "微軟正黑體", "Microsoft JhengHei", "Segoe UI Semibold", "Segoe UI";
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: center;
+    }
+  }
+  .user-wrapper {
+    .user {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      .photo {
+        width: 61px;
+        height: 61px;
+        border-radius: 50%;
+        border: 1px solid #FFFFFF;
+        margin-right: 10px;
+      }
+      .userinfo {
+        flex-grow: 1;
+        padding-left: 30px;
+        .username {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 19px;
+          padding-bottom: 8px;
+          &:hover{
+            cursor: pointer;
+            color: lighten($blue-color,36%) !important;
+            transition: .3s;
+          }
+        }
+        .title {
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 17px;
+          p{
+            margin: 0;
+            font-size: 12px;
+          }
+        }
+      }
+      .collapse-arrow {
+        font-size: 30px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .collapse-arrow.active {
+        transform: rotate(180deg);
+      }
+    }
+    .user-nav > li > a {   // ********** User選單 **********
+      padding-left: 90px;
+      color: white;
+
+      &:hover, &:active {
+        color: black;
+        background: darken($primary-color,15%);
+        // background: #922;
+      }
+      &:focus{
+        // color: white;
+        // background: transparent;
+        background: $primary-color;
+        color: black;
+      }
+      >p{ // My Profile
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+  }
+
+  hr{
+    border-color:$primary-color-d-30;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  > .sidebar-wrapper > .nav {  // ********** 大項目 **********
+    > li {
+        a {
+          padding: 10px 30px 10px 60px;
+          font-size: 14px;
+          color: $sidebar-color;
+          background: $sidebar-bg ;
+          &:hover {
+            background: $sidebar-menu-bg-hover  ;
+            cursor: pointer;
+          }
+          &:active, &:focus{
+            background: $sidebar-menu-bg-active ;
+          }
+        }
+    
+      > div > ul.nav {  // ********** 小項目 **********
+        background: $sidebar-sub-menu-bg;
+        // background: rgb(16, 16, 16);
+        list-style-type: circle;
+         li {
+           a{
+              padding-left: 74px;
+              font-size: 13px;
+              color: white;
+              background: $sidebar-sub-menu-bg ;  //小項目背景
+              &:hover {
+                background: $sidebar-sub-menu-bg-hover;
+              }
+              &:active, &:focus{
+                background: $sidebar-sub-menu-bg-active;
+                outline: none;
+              }
+           }
+        }
+      }
+    }
+
+    .nav-title-box{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .nav-title{
+        line-height: 22px;
+      }
+      .nav-angle {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    p {
+      margin: 0;
+      line-height: 22px;
+      font-size: 12px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      position: relative;
+
+      .caret {
+        margin-left: 10px;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+  .line {
+    box-sizing: border-box;
+    height: 1px;
+    width: 100%;
+    border: 1px solid #A1A7BB;
+    opacity: 0.1;
+  }
+}
+
+.close-layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: auto;
+  content: "";
+  z-index: 1000;
+  overflow-x: hidden;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+// ------------------ 改寫插件 react-light-accordion
+
+.accordion{
+  border: none !important;
+  border-radius: 0 !important;
+
+  .accordion-item{ //-----大項目區域
+    background: transparent !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    .title{ // (button) //-----大項目文字
+      background: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+      margin: 0 !important;
+      padding: 14px 30px 14px 60px !important;
+      font-size: 14px!important;
+      color: $sidebar-color!important;
+      // cursor: pointer;
+      &:hover {
+        color: #fff!important;
+        background-image: linear-gradient(160deg, 
+        lighten($primary-color-d-15,2%)8%,
+        darken($primary-color-d-15,2%) 20% 45%, 
+        lighten($primary-color-d-15,2%)65%,
+        darken($primary-color-d-15,4%) ,
+        )!important;
+        cursor: pointer!important;
+      }
+      &:active, &:focus{
+        color: #fff!important;
+        background-image: linear-gradient(160deg, 
+        lighten($primary-color-d-5,2%)8%,
+        darken($primary-color-d-5,3%) 15% 45%, 
+        lighten($primary-color-d-5,2%)75%,
+        darken($primary-color-d-5,3%),
+        )!important;
+      }
+      &:after{
+        display: none;
+      }
+    }
+  }
+
+  .panel{ // -----小項目區域
+    border-radius: 0 !important;
+    margin-bottom: 0px !important;
+    background: transparent !important;
+    background: rgb(24, 24, 24) !important;
+    a{ // -----小項目標題
+      padding: 10px 15px 10px 72px!important;
+      font-size: 13px!important;
+      color: white!important;
+      list-style-type: circle !important;
+      &:hover {
+        background-image: linear-gradient(155deg, 
+        lighten($primary-color-d-15,2%)5%,
+        darken($primary-color-d-15,2%) 12% 45%, 
+        lighten($primary-color-d-15,2%)65%,
+        darken($primary-color-d-15,4%) ,
+        )!important;
+      }
+      &:active ,&:focus{
+        background-image: linear-gradient(160deg, 
+          lighten($primary-color-d-5,2%)8%,
+          darken($primary-color-d-5,3%) 15% 45%, 
+          lighten($primary-color-d-5,2%)75%,
+          darken($primary-color-d-5,3%),
+        )!important;
+      }
+    }
+  }
+}
+
+
+// ---------------------------------
+
+
+
+// `7MM"""Mq.`7MMF'     A     `7MF'`7MM"""Yb.   
+//   MM   `MM. `MA     ,MA     ,V    MM    `Yb. 
+//   MM   ,M9   VM:   ,VVM:   ,V     MM     `Mb 
+//   MMmmdM9     MM.  M' MM.  M'     MM      MM 
+//   MM  YM.     `MM A'  `MM A'      MM     ,MP 
+//   MM   `Mb.    :MM;    :MM;       MM    ,dP' 
+// .JMML. .JMM.    VF      VF      .JMMmmmdP'   
+
+@media (max-width: 1280px) { // ← 控制 nav 於哪個螢幕寬度要收合
+  .sidebar, .bootstrap-navbar {
+    position: fixed;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: $sidebar-width;
+    left: 0;  //選單靠右 or 靠左控制
+    right: auto;
+    z-index: 1032;
+    visibility: visible;
+    overflow-y: visible;
+    padding: 0;
+    // transform: translateX($sidebar-width);
+    transform: translateX(-$sidebar-width);
+  }
+  
+  .main-panel, .wrapper-full-page {
+    transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    left: 0;
+    width: 100%;
+    // transform: translateX(0);
+    // transform: translateX(280px);
+  }
+
+  .nav-open {
+    .main-panel, .wrapper-full-page {
+      transform: translateX($sidebar-width);
+      left: 0;
+      overflow: hidden;
+    }
+    .sidebar {
+      transform: translateX(0);
+    }
+    .close-layer {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+
+

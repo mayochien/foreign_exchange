@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  foreign_exchange_banker:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: foreign_exchange_banker
+    # volumes:
+    #   - ./src:/app/src:rw
+    networks:
+      - foreign_proxy
+    ports:
+      - "8082:3000"
+    tty: true
+
+networks:
+  foreign_proxy:
+    external:
+      name: betfair-credit

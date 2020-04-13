@@ -1,0 +1,263 @@
+// *************** ↓ 搜尋&篩選 ↓ ***************
+.filter-section {
+    padding: 10px 10px 2px 10px;
+    color: $primary-text-color ;  
+    font-weight: bold;
+    // ********** 第1排 資料區間:從[ ]到[ ] **********
+    .datepicker-input-search-section {
+        display: flex;
+        align-items: center;
+        padding: 3px 0;
+        .datepicker-search-label {
+            // 標題"資料區間"
+            height: 26px;
+            line-height: 26px;
+            margin: 0 4px 0 0;
+            @media (max-width: 700px) {
+                display: none;
+            }
+        }
+        .datepicker-search-from-to {
+            //"從"&"到"
+            padding: 0 3px;
+            height: 26px;
+            line-height: 26px;
+        }
+        .react-datepicker-wrapper {
+            // date picker輸入框
+            display: flex;
+            align-items: center;
+            .react-datepicker__input-container {
+                .date-search-input {
+                    height: 26px;
+                    max-width: 110px;
+                    line-height: 26px;
+                    background: $btn-bg-color ;
+                    border: none;
+                    border-radius: 2px;
+                    padding: 0 8px;
+                    text-align: center;
+                    transition: .3s;
+                    @media (max-width: 700px) {
+                        max-width: 94px !important;
+                    }
+                    &:hover , &:active{
+                    //    color:$primary-text-active-color;
+                    }
+                    &:focus {
+              
+                        background:$btn-bg-active-color ;
+                        color: $primary-white;
+                    }
+                }
+            }
+        }
+        .datepicker-search-btn {
+            //搜尋按鈕
+            height: 26px;
+            width: auto;
+            min-width: 60px;
+            margin: 0 0 0 4px;
+            padding: 0 11px;
+            // background-color: #555;
+            border-radius: 2px;
+            color: #bbb;
+            text-align: center;
+            border: none;
+            display: flex;
+            align-items: center;
+            transition: .3s;
+            &:hover {
+                cursor: pointer;
+                color: $primary-white;
+                background: $btn-bg-hover-color ;
+            }
+            &:focus {
+                outline: none;
+                color: $primary-white;
+            }
+            .fa-search {
+                font-size: 8px;
+                margin-right: 2px;
+            }
+        }
+    }
+    // ********** 第2排 下方各日期 [今日][昨日]... 按鈕 **********
+    .date-btn-section {
+        padding: 3px 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .date-btn {
+            height: 26px;
+            width: auto;
+            min-width: 63px;
+            margin: 0 4px 0 0;
+            padding: 0 12px;
+            background: $btn-bg-color;
+            border-radius: 2px;
+            color: $primary-text-color ;
+            text-align: center;
+            border: none;
+            transition: .3s;
+            &:hover {
+                cursor: pointer;
+                color: $primary-white;
+                background: $btn-bg-hover-color ;
+            }
+            &:focus {
+                outline: none;
+                color: $primary-white;
+            }
+            @media (max-width:700px) {
+                margin-bottom: 4px;
+            }
+        }
+        .date-btn-active {
+            background: $btn-bg-active-color ;
+            color: $primary-text-active-color ;
+        }
+    }
+    // ********** 下拉&搜尋條 **********
+    .table-filter-section {
+        display: flex;
+        align-items: center;
+        padding: 3px 0;
+        .table-filter-label {
+            height: 26px;
+            line-height: 26px;
+            margin: 0 4px 0 0;
+        }
+        .table-select {
+            // 篩選清單用的option
+            width: auto;
+            min-width: 85px;
+            padding: 0px 8px;
+            margin: 0 4px 0 0;
+            height: 26px;
+            border-radius: 3px;
+            border: none;
+            background: $table-input-bg-color ;
+            color:$primary-text-color ;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        
+    .search-form-fieldset{
+        width: auto;
+        min-width: 85px;
+        max-width: 150px;
+        height: 26px;
+        display: flex;
+        line-height: 26px;
+        // background: $table-input-bg-color;
+        border: none;
+        border-radius: 3px;
+        position: relative;
+        .input-search{
+          width: 100%;
+          height: 100%;
+          background: $table-input-bg-color ;
+          color: $primary-text-color ;
+          border-radius: 3px;
+          // z-index: 2;
+          border: none;
+          padding-left: 6px;
+          &:focus{
+            outline: none;
+          }
+        }
+        .btn-search-clear{
+          position: absolute;
+          height: 17px;
+          width: 17px;
+          top: 6px;
+          right: 4px;
+          background: transparent;
+          border: none;
+          z-index: 3;
+          font-size: 14px;
+          &:focus{
+            outline: none;
+          }
+          &:hover{
+            color: $text-red;
+          }
+          svg{
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            font-weight: bold;
+          }
+        }
+      }
+      .button-search{
+        width: 26px;
+        height: 26px;
+        border: none;
+        background: $btn-bg-color ;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 6px;
+        transition: .3s;
+        &:hover{
+          background: $btn-bg-hover-color ;
+            .fa-search {
+              color: $primary-text-active-color ;
+            }
+          }
+        &:focus{
+          outline: none;
+        }
+        .fa-search {
+          font-size: 1rem;
+          color: $primary-text-color ;
+         
+        }
+      }
+    }
+    // 報表相關資訊 EX: 資料總數、錢包金額
+    .data-info-section {
+        display: flex;
+        justify-content: flex-end;
+        padding: 3px 0;
+        .data-info-item {
+            margin: 0 8px;
+            &:last-child {
+                margin-right: 0;
+            }
+            .info-item-value {
+                padding: 0 3px;
+            }
+        }
+    }
+    .download-btn {
+        //下載報表
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        height: 26px;
+        width: auto;
+        min-width: 60px;
+        padding: 0 11px;
+        background-color: $btn-bg-color ;
+        border-radius: 2px;
+        color: $primary-text-color ;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            transition: .3s;
+            color: $primary-text-active-color ;
+            background: $btn-bg-hover-color;
+        }
+        &:focus {
+            outline: none;
+        }
+        svg {
+            margin-right: 4px;
+        }
+    }
+}

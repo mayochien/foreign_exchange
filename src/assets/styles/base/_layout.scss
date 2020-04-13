@@ -1,0 +1,291 @@
+html{
+  font-family: "微軟正黑體", "Open Sans", "Microsoft JhengHei", "Segoe UI Semibold", "Segoe UI";
+  overflow: hidden;
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  position: relative;
+  font-family: "微軟正黑體", "Open Sans", "Microsoft JhengHei", "Segoe UI Semibold", "Segoe UI";
+  overflow: hidden;
+  background-image: url(../../images/Login_Background_OK2TRADE.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+}
+
+.main-panel {//主畫面背景
+  max-height: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  float: right;
+  width: calc(100% - 280px);
+  overflow: auto;
+  background: $main-background !important;
+  box-shadow: 0 30px 130px 0 rgba(90,105,116,0.1);
+    .main-panel-center{ //主畫面中間部分
+      padding: 15px 30px 30px 30px;
+      .col-md-12{
+        padding: 0;
+      }
+      .col-md-6{
+        padding: 0 10px;;
+      }
+    }
+    a{ //改變全站a標籤樣式
+      &:hover{
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+}
+
+
+// -------------------------  自訂金色滾動條 ↓ ---------------------------
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  // overflow: visible;
+}
+
+::-webkit-scrollbar-track {  //底部軌道
+  box-shadow: inset 0 0 12px $primary-color-d-50;
+}
+
+::-webkit-scrollbar-thumb {  //滑塊
+  box-shadow: inset 0 0 12px $primary-color-l-15;
+}
+
+::-webkit-scrollbar-thumb:hover {
+ box-shadow: inset 0 0 12px $primary-color-l-5;
+}
+// -------------------------  自訂金色滾動條 ↑ ---------------------------
+
+hr{ // 全站分隔線
+  border-color: $primary-color-d-15;
+}
+
+
+
+
+.text-center {
+  text-align: center;
+}
+
+.text-green {
+  color: $text-green;
+  font-weight: bold;
+}
+
+.text-red {
+  color: $text-red;
+  font-weight: bold;
+}
+
+.text-red-dark {
+  color: $text-red-dark;
+  font-weight: bold;
+}
+
+.text-yellow {
+  color:$primary-color;
+  font-weight: bold;
+}
+
+.text-primary-l-5 {
+  color: $blue-color;
+  font-weight: bold;
+}
+
+.text-primary-l-10 {
+  color: $primary-color-l-10;
+  font-weight: bold;
+}
+
+.text-failed {
+  color: $text-red;
+  font-weight: bold;
+}
+
+.text-completed {
+  color: $text-green ;
+  font-weight: bold;
+}
+
+.text-white {
+  color: #fff;
+  font-weight: bold;
+}
+
+.text-gray-999 {
+  color: $primary-color-l-10;
+}
+
+.text-gray-555 {
+  color: #555;
+}
+
+.text-14 {
+  font-size: 14px;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+.text-primary {
+  color: $primary-color;
+  // font-weight: bold;
+}
+
+.p-10{
+  padding: 10px;
+}
+
+.pl-5{
+  padding-left: 5px;
+}
+.pl-10{
+  padding-left: 10px;
+}
+.pl-15{
+  padding-left: 15px;
+}
+
+.pr-5{
+  padding-right: 5px;
+}
+.pr-10{
+  padding-right: 10px;
+}
+.pr-15{
+  padding-right: 15px;
+}
+
+
+.ml-auto{
+  margin-left: auto;
+}
+.ml-5{
+  margin-left: 5px;
+}
+.ml-10{
+  margin-left: 10px;
+}
+.ml-15{
+  margin-left: 15px;
+}
+.ml-20{
+  margin-left: 20px;
+}
+
+.mr-5{
+  margin-right: 5px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.mr-15{
+  margin-right: 15px;
+}
+.mr-20{
+  margin-right: 20px;
+}
+.mr-25{
+  margin-right: 25px;
+}
+.mr-30{
+  margin-right: 30px;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mb-0{
+  margin-bottom: 0px;
+}
+
+.mb-5{
+  margin-bottom: 5px;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.m-tb-30{
+  margin: 30px 0 ;
+}
+
+.mtb-15{
+  margin: 15px 0;
+}
+
+
+.m-tb-60{
+  margin: 60px 0;
+}
+
+.m-tb-190{
+  margin: 190px 0;
+}
+
+.font-12{
+  font-size: 12px;
+}
+
+.font-11{
+  font-size: 11px;
+}
+
+.font-10{
+  font-size: 10px;
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-primary-text-color{
+  color: $primary-text-color !important;
+  &:hover{
+    color: $btn-text-active-color !important;
+  }
+}
+                                             
+// `7MM"""Mq.`7MMF'     A     `7MF'`7MM"""Yb.   
+//   MM   `MM. `MA     ,MA     ,V    MM    `Yb. 
+//   MM   ,M9   VM:   ,VVM:   ,V     MM     `Mb 
+//   MMmmdM9     MM.  M' MM.  M'     MM      MM 
+//   MM  YM.     `MM A'  `MM A'      MM     ,MP 
+//   MM   `Mb.    :MM;    :MM;       MM    ,dP' 
+// .JMML. .JMM.    VF      VF      .JMMmmmdP'   
+
+@media(max-width:500px){
+  .main-panel{
+    .main-panel-center{ //主畫面中間部分
+      padding: 15px 15px;
+    }
+  }
+}

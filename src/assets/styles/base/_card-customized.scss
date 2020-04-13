@@ -1,0 +1,1134 @@
+
+// ********** 點擊通知後，跳轉，單行閃爍 **********
+.td-active{ // 點通知-> 進入詳細頁active
+  animation:blinkingText;
+  animation-duration: 6s;
+  animation-delay: 0.3s;
+}
+@keyframes blinkingText{
+  0%{background: $blue-color;}
+  65%{background: $table-bg-color; }
+  66%{background: $table-bg-color; }
+  99%{background: $table-bg-color; }
+  100%{background: $table-bg-color;}
+}
+
+.card-exchange {
+
+  .input-only-read{   //▇▇▇▇▇▇▇▇▇▇ input的 只能觀看欄位 ▇▇▇▇▇▇▇▇▇▇
+    width: 100%;
+    padding: 0px 16px 0 16px;
+    height: 30px;
+    border-radius: 18px;
+    border: none;
+    background: $primary-color-l-45 !important;
+    color: $primary-color;
+    pointer-events: none;
+  }
+
+  .table-select {
+    //  ▇▇▇▇▇▇▇▇▇▇ 表單內用的下拉input  ▇▇▇▇▇▇▇▇▇▇
+    width: 100%;
+    padding: 0px 16px 0 16px;
+    height: 30px;
+    border-radius: 18px;
+    border: none;
+    background: $primary-color-l-35  ;
+    color: $primary-text-color ;
+    &:hover {
+        cursor: pointer;
+        background: $primary-color-l-30  ;
+    }
+}
+
+  .input-upload{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-add-user-deposit{
+    display: flex;
+    align-items: center;
+    background: transparent;
+  }
+
+  .text-right{
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    .text-page-link{  // table右上方 新增、查看清單的跳轉按鈕
+      color:$primary-color-l-5 ;
+      transition: .2s;
+      height: 20px;
+      line-height: 20px;
+      // width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      &:hover{
+        color:$blue-color !important;
+      }
+    }
+  }
+
+
+  .content{
+    .col-md-3-input{ // 拆分左右的input
+      width: 90%;
+      @media(max-width: 1280px){
+        width: 100%;
+      }
+    }
+
+    .col-md-3-slelect{
+      width: 90%;
+      @media(max-width: 1280px){
+        width: 100%;
+      }
+    }
+
+
+    .form-right-radio-checkbox{  //remark
+      // width: 150px ;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      .input-radio{
+        width: 30px;
+        height: 16px;
+        margin-right: 12px;
+      }
+      .radio-label{
+        margin-left: 12px;
+      }
+    }
+
+    .input-right-separate-label{ //remark
+      width: 13%;
+      min-width: 74px;
+      text-align: center;
+    }
+
+    .input-right-separate-input{
+      width: 87%;
+      min-width: 80px;
+      max-width: 380px;
+    }
+
+
+    .select-box{ //下拉
+      height: 30px;
+      margin-top: 1.5px;
+      // min-width: 80px;
+      background: #666;
+      border: none;
+      border-radius: 6px;
+      text-align: center;
+      padding: 0 10px;
+      &:hover{
+        cursor: pointer;
+      }
+      .select-option, option{
+        padding: 4px 10px;
+        border: none ;
+        border-radius: 6px;
+        // color: #FB404B;
+        &:hover{
+          background: $primary-color !important;
+        }
+      }
+    }
+  }
+
+
+  //拉條
+  .slider-box{
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .slider-info-box{
+      // width: 24%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      .slider-btn{
+        min-width: 70px;
+        margin-top: 0;
+        margin-right: 12px;
+        padding: 8px 20px;
+      }
+      .active-btn{
+        background: $primary-color;
+        color: #fff !important;
+      }
+      .show-value{
+        // min-width: 70px;
+        padding: 10px 10px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        .show-value-origin{
+          margin-right: 14px;
+          color: $primary-color-l-5;
+        }
+        svg{
+          padding-top: 4px;
+          font-size: 18px;
+          color: #ddd;
+        }
+        .show-value-update{
+          margin-left: 14px;
+          color: #ddd;
+        }
+      }
+    }
+
+
+    .fee-rate-slider-not-modify{ // 不能編輯時的樣式
+      background: $gray-850 !important;
+      pointer-events: none;
+      .rangeslider__handle{  //操控的圓點
+        width: 0 !important;
+        height: 0px !important;
+        background:$primary-color-d-10 !important;
+      }
+    }
+    .fee-rate-slider{
+      // width: 76%;
+      // margin-bottom: 1.5rem;
+      padding: 5px 25px;
+      background: $gray-650;
+      border-radius: 40px;
+
+      .rangeslider{  // 未填滿的區域
+        background: $gray-400;
+        justify-content: center;
+        margin: 16px auto;
+
+        // width: 90%;
+              // lighten($primary-color,5%)2%,
+          .rangeslider__fill{ //填滿的區域
+            background-image: linear-gradient(180deg,
+              darken($primary-color,4%) 5%,
+              darken($primary-color,3%) 12%,
+              darken($primary-color,1%)20%,
+              lighten($primary-color,3%)45%,
+              darken($primary-color,2%)65%,
+              darken($primary-color,8%) 85%,
+            );
+            box-shadow: none;
+          }
+          .rangeslider__handle{  //操控的圓點
+            width: 23px;
+            height: 23px;
+            outline: none;
+            border: none;
+            background:$primary-color-l-10;
+            box-shadow: 0.5px 0.5px -0.5px $gray-300;
+          }
+          .rangeslider__handle:after {
+            display: none;
+          }
+      }
+    }
+  }
+
+  .banker-user-slider{
+    .rangeslider{
+      background: rgb(199, 102, 118) !important;
+      .rangeslider__fill{ //填滿的區域
+        background: rgb(61, 147, 168) !important;
+      }
+    }
+  }
+
+  .verify-form{
+    padding: 10px;
+    .verify-animate{
+      svg{
+        // width: 40px !important;
+        font-size: 30px !important;
+      }
+    }
+  }
+}
+
+// ********** 個人資料 基本資料 **********
+.form-profile{
+  .react-tel-input{ //其實是iunput的外框
+    // width: 100%;
+    .form-control{
+      padding-left: 56px !important;
+    }
+    .form-control-edit{
+      background: $primary-color-l-30 !important;
+      .selected-flag{
+        &:hover{
+          background: $primary-color-l-30;
+          border-radius: 10px 0 0 10px !important;
+        }
+        &:active{
+          background: $primary-color-l-30;
+          border-radius: 10px 0 0 10px !important;
+        }
+      }
+    }
+    .form-control-disable{
+      background: $primary-color-l-45  !important;
+      .selected-flag{
+        &:hover{
+          background: $primary-color-l-45;
+          border-radius: 10px 0 0 10px !important;
+        }
+        &:active{
+          background: $primary-color-l-45;
+          border-radius: 10px 0 0 10px !important;
+        }
+      }
+    }
+    .flag-dropdown{
+      border-radius: 18px 0 0 18px !important;
+      border-top:none !important;
+      border-right: 2px solid $primary-color-l-40 !important;
+      border-bottom:none !important;
+      border-left:none !important;
+      width: 50px;
+      .selected-flag{
+        width: 100%;
+        padding: 0 14px 0 14px !important;
+      }
+    }
+    .flag-dropdown-edit{
+      background: $primary-color-l-30 !important;
+      &:hover{
+        .selected-flag{
+          background: lighten($blue-color,25%)  !important;
+          border-radius: 18px 0 0 18px !important;
+        }
+      }
+    }
+  }
+
+  .form-group-verify-action-section{ //基本資料的 發送驗證 按鈕欄位
+    .verify-action-box{ //發送欄位
+      display: flex !important;
+      align-items: center;
+      justify-content: flex-start;
+      height: 33px;
+      color: #666;
+      font-size: 12px;
+      font-weight: bold;
+      margin-left: -11px;
+      padding: 0 5px 0 15px ;
+      .profile-btn-verify{
+        display: flex;
+        align-items: center ;
+        justify-content: center ;
+        height: 23px;
+        line-height: 23px;
+        margin: 0 0 0 4px;
+        padding: 0 9px ;
+        min-width: 65px;
+        border-radius: 5px;
+        border:none;
+        background: $primary-color-l-15;
+        color: $primary-white ;
+        transition: .2s;
+        box-shadow: 0.5px 0.5px 1.5px $primary-color-l-40 inset;
+        &:hover{
+          background: $blue-color;
+        }
+        &:focus{
+          outline: none;
+        }
+      }
+      //編輯時，不能發送的樣式
+      .profile-btn-verify-readonly{
+        pointer-events: none;
+        border:none;
+        background: $primary-color-l-40 ;
+        color: $primary-color-l-20 ;
+        height: 23px;
+        line-height: 23px;
+        margin: 0 0 0 4px;
+        padding: 0 9px ;
+        min-width: 65px;
+        border-radius: 5px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        &:focus{
+          outline: none;
+        }
+
+      }
+    }
+    @media (max-width:991px) {
+      max-height: 30px;
+      margin: 0;
+      padding: 0;
+      .verify-action-label{
+        display: none;
+      }
+      .verify-action-box{
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+// ********** 新增掛單 **********
+.card-CreateOrder{ 
+  .mb-4{
+    margin-bottom: 4px !important;
+  }
+  .form-group-currency-change{ //上下調換按鈕
+    .currency-change-btn-section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .currency-change-btn{
+        display: flex;
+        align-items: center;
+        background: $btn-bg-color ;
+        height: 30px;
+        border: none;
+        margin: 0;
+        padding: 0 20px;
+        border-radius: 5px;
+        svg{
+          color: $primary-text-color ;
+          font-size: 18px;
+        }
+        &:focus{
+          outline: none;
+        }
+        &:hover{
+          transition: .2s;
+          background: $primary-color-d-10;
+          svg{
+            color: #ddd;
+          }
+        }
+        &:active{
+          svg{
+            color: #bbb;
+          }
+          background: $primary-color-d-20;
+        }
+      }
+    }
+  }
+}
+
+
+// **********  換匯報表(標題) **********
+.table-head-exchange-report{
+  background: $table-header-bg-color ;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+  font-weight: bold;
+  font-size: 15px;
+  color:$primary-text-color ;
+  .title-currency{
+    width: 20%;
+    text-align: right;
+    font-weight: bold;
+  }
+  .title-spacing{
+    width: 1%;
+    padding: 0 20px 0 14px;
+    color: $primary-text-color ;
+  }
+  .title-amount{
+    width: 20%;
+    text-align: left;
+  }
+  .title-menu-icon{
+    width: 50%;
+    margin-left: 60px;
+    background: #922;
+  }
+}
+
+
+// **********  換匯報表(下方內容) **********
+.table-body-exchange-report{
+  .table-tr-exchange-report{
+    .table-td-exchange-report{
+      background: $table-bg-color;
+      padding: 0;
+      border-top: 1px solid $table-border-color ;
+      .title-info{
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+
+        // justify-content: center;
+        &:hover{
+          transition: .2s;
+          cursor: pointer;
+          background: $primary-color-l-20 ;
+          // background: #118;
+        }
+        .title-currency{
+          width: 6%;
+          text-align: right;
+          font-weight: bold;
+        }
+        .title-spacing{
+          width: 2%;
+          padding: 0 20px 0 14px;
+          color: $primary-text-color ;
+        }
+        .title-amount{
+          width: 40%;
+          text-align: left;
+          letter-spacing: 0.5px;
+          @media (max-width:600px) {
+            width: 87% ;
+          }
+        }
+        .title-menu-icon{
+          width: 52%;
+          text-align: left;
+          @media (max-width:600px) {
+            width: 4% ;
+          }
+        }
+      }
+      .title-active{ //展開的選單active
+        background: $primary-color-l-20 ;
+      }
+      //收合選單內
+      .exchange-report-item-collapse{
+        .er-item-thead{
+          .er-item-thead-tr{ //目錄
+            background: $table-bg-color ;
+            th{
+              padding: 3px 8px !important;
+            }
+          }
+        }
+        .er-item-tbody{
+          .er-item-tbody-tr{ //子層背景
+            background: $table-bg-color ;
+              &:last-child{
+                border-bottom: none;
+              }
+          }
+        }
+
+        .table-no-data-er-item{ //查無資料時背景
+          background: $table-bg-color ;
+          padding: 14px 0;
+        }
+      }
+    }
+    .mb-0{
+      margin-bottom: 0 ;
+    }
+  }
+}
+
+
+
+// ********** 存款詳細頁面 **********
+.card-deposit-detail{
+  .detail-title{
+    padding: 10px;
+    .detail-title-line{
+      width: 100%;
+      display: flex;
+      margin: 8px 0;
+      justify-content: center;
+      .dtl-label{
+        width: 50%;
+        max-width: 180px;
+        text-align: right;
+        margin-right: 10px;
+        padding: 6px 10px ;
+        color: $primary-text-color ;
+      }
+      .dtl-value{
+        width: 50%;
+        max-width: 230px;
+        text-align: left;
+        background: $table-input-bg-color ;
+        border-radius: 18px;
+        padding: 6px 12px;
+        color: $primary-text-color ;
+      }
+    }
+  }
+}
+
+
+// ********** 新增客服訊息表單 **********
+.form-service{
+  .message-form-group{
+    height: 220px ;
+
+    .message-textera-box{
+      height: 210px ;
+      @media(max-width:991px){
+        height: 190px ;
+      }
+      .message-textera{
+        min-height: 100%;
+        max-height: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 15px;
+        background:$table-input-bg-color ;
+        color: $primary-text-color ;
+        font-size: 14px;
+        line-height: 1.5rem;
+        word-wrap:break-word !important;
+        overflow: hidden !important;
+      }
+    }
+  }
+
+  .service-photo-form-group{
+    height: 240px;
+    @media(max-width:991px){
+      height: 260px ;
+    }
+      .img-label{
+        height: 240px;
+        width: 100%;
+        padding: 3px 3px 6px 3px;
+        margin: 0;
+        background: $table-input-bg-color ;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &:hover{
+          transition: .3s;
+          cursor: pointer;
+          background: $primary-color-l-25;  //整體的hover背景
+        }
+        .upload-input{ //隱藏的上傳按鈕
+          width: 0px ;
+          height: 0px ;
+          padding: 0 !important;
+          margin: 0 !important;
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          background: transparent ;
+        }
+        .preview-img{
+          max-height: 210px;
+          max-width: 98%;
+          padding-top: 2px;
+          overflow: hidden;
+        }
+        .MdCloudUpload{
+          font-size: 40px;
+          color: $primary-color-l-10 ;
+          // line-height: 200px;
+        }
+        .btn-cancel-photo{
+          width: 17px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          margin: 3px 3px 3px auto;
+          border: none;
+          border-radius: 2px ;
+          background: $primary-color-l-15;
+          color: #eee;
+          font-size: 14px;
+          
+          &:hover{
+            transition: .2s;
+            background: $text-red;
+          }
+          &:focus{
+            outline: none;
+          }
+
+        }
+      }
+    // }
+  }
+}
+
+
+// ********** 通知清單頁 **********
+.table-notification{
+  .notify-delete-th{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+    height: 36px !important;
+    .notify-checkbox-select-all{
+      width: 19px !important;
+      height: 19px !important;
+      margin: 0;
+    }
+    .notify-btn-delete{
+      width: auto !important;
+      height: 19px !important;
+      margin: 0 0 0 4px;
+      padding: 0 4px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // background: #777;
+      background: desaturate($text-red,22%);
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: 13px;
+      &:hover{
+        background: darken($text-red,3%);
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+    .notify-btn-delete-disable{
+      width: auto !important;
+      height: 19px !important;
+      margin: 0 0 0 4px;
+      padding: 0 4px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // background: #777;
+      background: $primary-color-l-20;
+      color: $btn-text-color ;
+      border: none;
+      border-radius: 3px;
+      font-size: 13px;
+      &:hover{
+        // color: #fff;
+        // background: desaturate($text-red,40%);
+        cursor: default;
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .tbody-notification{
+    .notify-color-account{ //帳號
+      color: $notify-color-account !important;
+    }
+    .notify-color-transaction{ //換匯交易
+      color:$notify-color-transaction !important;
+    }
+    .notify-color-deposit{ //存款
+      color:$notify-color-deposit !important;
+    }
+    .notify-color-service{ //客服
+      color:$notify-color-service !important;
+    }
+    .notify-color-withdraw{ //提款
+      color:$notify-color-withdraw !important;
+    }
+
+    .td-notify-checkbox{
+      display: flex;
+      justify-content: center;
+      padding: 6px 0 0 0 !important;
+      align-items: center;
+      .notify-checkbox-input{
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .blank-box{ //為了對齊標題
+        margin: 0 0 0 5px;
+        width: 19px !important;
+        height: 19px !important;
+      }
+    }
+  }
+}
+
+// ********** 新增表單底部說明文字 **********
+.card-top-info{
+  display: flex;
+  .right-info{
+    margin-left: auto;
+    .linkBtn{
+      display: flex;
+      align-items: center;
+      color: #777;
+      &:hover{
+        color: $primary-color-d-5;
+      }
+    }
+  }
+  .left-info{
+    margin-right: auto;
+    .remind-text{  // ex:新增銀行
+      display: flex;
+      align-items: center;
+      color: $text-red;
+      letter-spacing: 0.4px;
+      svg{
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+
+// ********** 換匯市場 **********
+.hightlight-banker{  //凸顯莊家
+  color: $golden-color-1 ;
+}
+
+
+
+
+// ********** 客服訊息畫面**********
+.imgBox {
+  width: 320px;
+  height: 200px;
+  // border:1px dashed #d5bc7a ;
+  background-color: $table-header-bg-color ;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media(max-width: 1024px){
+    width: 300px;
+    height: 195px;
+  }
+  @media(max-width: 768px){
+    width: 300px;
+    height: 190px;
+  }
+  @media(max-width: 585px){
+    width: 300px;
+    height:180px;
+    left: 10%;
+    top: 18%;
+  }
+  @media(max-width: 414px){
+    width: 290px;
+    height: 175px;
+  }
+  @media(max-width: 375px){
+    width: 285px;
+    height: 155px;
+  }
+  @media(max-width: 320px){
+    width: 255px;
+    height: 155px;
+  }
+}
+.imgBox>img {
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+}
+.zoomInImgBox {
+    max-width: 1000px;
+    max-height: 700px;
+    width: 200%;
+    height: 200%;
+    background-size: cover;
+    position: fixed;
+    top: 10%;
+    display: flex;
+
+    @media(max-width: 1024px){
+      width: 500px;
+      height: 395px;
+    }
+    @media(max-width: 768px){
+      width: 500px;
+      height:  495px;
+    }
+    @media(max-width: 585px){
+      width: 500px;
+      height: 495px;
+    }
+    @media(max-width: 414px){
+      width: 290px;
+      height: 255px;
+    }
+    @media(max-width: 375px){
+      width: 290px;
+      height: 255px;
+    }
+    @media(max-width: 320px){
+      width: 255px;
+      height: 255px;
+    }
+  }
+
+  .zoomInImgBox > img {
+    width: 100%;
+    height: 100%;
+  }
+
+.MsgBox {
+    width: 90%;
+    background-color: $table-header-bg-color;
+    border-radius: 5px;
+    padding: 2px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    @media(max-width: 1340px) {
+        width: 750px;
+    }
+    @media(max-width: 1024px) {
+        width: 680px;
+    }
+    @media(max-width: 899px) {
+        width: 580px;
+    }
+    @media(max-width: 769px) {
+        width: 500px;
+    }
+    @media(max-width: 585px) {
+        width: 390px;
+    }
+    @media(max-width: 450px) {
+        width: 290px;
+    }
+    @media(max-width: 414px) {
+        width: 290px;
+    }
+    @media(max-width: 375px) {
+        width: 273px;
+    }
+    @media(max-width: 320px) {
+        width: 220px;
+    }
+}
+.QAMsgBox {
+    width: 90%;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-bottom: 20px;
+    background-color: $table-header-bg-color;
+    color: $primary-text-color ;
+    position: relative;
+    top: 2%;
+    left: 5%;
+    *{
+      color: $primary-text-color !important;
+    }
+    @media(max-width: 1340px) {
+        width: 750px;
+    }
+    @media(max-width: 1024px) {
+        width: 680px;
+    }
+    @media(max-width: 899px) {
+        width: 580px;
+    }
+    @media(max-width: 769px) {
+        width: 500px;
+    }
+    @media(max-width: 585px) {
+        width: 390px;
+    }
+    @media(max-width: 450px) {
+        width: 290px;
+    }
+    @media(max-width: 414px) {
+        width: 290px;
+    }
+    @media(max-width: 375px) {
+        width: 273px;
+    }
+    @media(max-width: 320px) {
+        width: 220px;
+    }
+}
+.QAMsgBox2 {
+    width: 450px;
+    height: 100px;
+    border: 1px solid $table-header-bg-color;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: $primary-text-color ;
+    overflow-y: scroll;
+}
+.QAMsgBox-up {
+    width: 90%;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 20px 0 20px 0;
+    background-color: $table-header-bg-color;
+    color: $primary-text-color ;
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    @media(max-width: 1340px) {
+        width: 750px;
+    }
+    @media(max-width: 1024px) {
+        width: 680px;
+    }
+    @media(max-width: 899px) {
+        width: 580px;
+    }
+    @media(max-width: 769px) {
+        width: 500px;
+    }
+    @media(max-width: 585px) {
+        width: 390px;
+    }
+    @media(max-width: 450px) {
+        width: 290px;
+    }
+    @media(max-width: 414px) {
+        width: 290px;
+    }
+    @media(max-width: 375px) {
+        width: 273px;
+    }
+    @media(max-width: 320px) {
+        width: 220px;
+    }
+}
+.QAMsgBox-down {
+    width: 90%;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 20px 0 20px 0;
+    background-color: $table-header-bg-color;
+    color: $primary-text-color ;
+    position: relative;
+    top: 4%;
+    left: 5%;
+    @media(max-width: 1340px) {
+        width: 750px;
+    }
+    @media(max-width: 1024px) {
+        width: 680px;
+    }
+    @media(max-width: 899px) {
+        width: 580px;
+    }
+    @media(max-width: 769px) {
+        width: 500px;
+    }
+    @media(max-width: 585px) {
+        width: 390px;
+    }
+    @media(max-width: 450px) {
+        width: 290px;
+    }
+    @media(max-width: 414px) {
+        width: 290px;
+    }
+    @media(max-width: 375px) {
+        width: 273px;
+    }
+    @media(max-width: 320px) {
+        width: 220px;
+    }
+}
+.QAMsgBox_reply {
+    width: 90%;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-bottom: 20px;
+    background-color: $table-header-bg-color;
+    color: $primary-text-color;
+    position: relative;
+    top: 2%;
+    left: 5%;
+}
+.MsgBox-text {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 26px;
+    color: $primary-text-color ;
+    // overflow-y: scroll;
+    // text-overflow: ellipsis;
+}
+.MsgQABox-text {
+  background-color: $table-header-bg-color;
+    font-size: 14px;
+    line-height: 26px;
+    color: $primary-text-color ;
+    font-weight: bold;
+}
+.QAMsgBox-new {  // 沒用到
+    width: 90%;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-bottom: 20px;
+    background-color: $table-header-bg-color;
+    color: $primary-text-color ;
+    white-space: pre;
+    word-wrap: break-word;
+    white-space: pre-line;
+    @media(max-width: 1340px) {
+        width: 750px;
+    }
+    @media(max-width: 1024px) {
+        width: 680px;
+    }
+    @media(max-width: 899px) {
+        width: 580px;
+    }
+    @media(max-width: 769px) {
+        width: 500px;
+    }
+    @media(max-width: 585px) {
+        width: 390px;
+    }
+    @media(max-width: 450px) {
+        width: 290px;
+    }
+    @media(max-width: 414px) {
+        width: 290px;
+    }
+    @media(max-width: 375px) {
+        width: 273px;
+    }
+    @media(max-width: 320px) {
+        width: 220px;
+    }
+}
+
+
+.add-user-deposit-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 42%;
+    @media(max-width: 769px) {
+        top: 30%;
+    }
+    @media(max-width: 375px) {
+        margin: 0 0 50px 0;
+    }
+}

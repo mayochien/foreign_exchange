@@ -1,0 +1,39 @@
+.container-fluid-profile{
+  padding-top: 40px;
+  .profile-header{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    .header-btn{ //沒有選到的tab樣式
+      margin: 0 2px -1px 0; //可以遮蓋下方大板塊的關鍵 (1)
+      padding: 12px 20px 10px 20px;
+      min-width: 120px;
+      color: $primary-color-l-25 ;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 1px ;
+      background: $primary-color-l-50 ;
+      border-radius: 6px 6px 0 0;
+      border: 0.5px solid $primary-color-l-45 ;
+      border-bottom: none;
+      &:focus{
+        outline: none;
+      }
+    }
+    .btn-active{ //選到的tab
+      background: $primary-white !important;
+      color: $blue-color !important;
+      // border: 0.5px solid $primary-color-l-30 !important;
+      border-bottom: none !important;
+      box-shadow: 0 -1px 1.5px 0px #ddd ;
+      z-index: 3; //可以遮蓋下方大板塊的關鍵 (2)
+    }
+  }
+  .card-profile{
+    padding-top: 20px;
+    background: $primary-white ;
+    .btn-section{
+      padding-top: 20px;
+    }
+  }
+}

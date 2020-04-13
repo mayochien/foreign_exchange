@@ -1,0 +1,411 @@
+html {
+	height: 100%;
+}
+			::-webkit-input-placeholder {
+  		 color: white !important;
+	}
+
+		:-moz-placeholder { /* Firefox 18- */
+  		 color: white !important;
+
+	}
+
+		::-moz-placeholder {  /* Firefox 19+ */ 
+  		 color: white !important;
+	}
+
+		:-ms-input-placeholder {   
+ 		  color: white !important;
+	}
+
+input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
+
+
+
+	.login-page{
+		height: 100vh;
+		min-height: 100%;
+
+		.gradient{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 1;
+			opacity: 0.28;
+			background: linear-gradient(180deg,
+			    #5f8591b2,
+				#616f9bb2,
+				#895c91b2, 
+				#975964b2,
+				#aa9969b6,
+				#6ba36bb2,
+				#5f8e8fb2,
+			  );
+			background-size: 400% 400%;
+
+			-webkit-animation: background-animation 16s ease infinite;
+			-moz-animation: background-animation 16s ease infinite;
+			animation: background-animation 16s ease infinite;
+			@-webkit-keyframes background-animation {
+				0%{background-position:47% 0%}
+				50%{background-position:54% 100%}
+				100%{background-position:47% 0%}
+			}
+			@-moz-keyframes background-animation {
+					0%{background-position:47% 0%}
+					50%{background-position:54% 100%}
+					100%{background-position:47% 0%}
+			}
+			@keyframes background-animation { 
+					0%{background-position:47% 0%}
+					50%{background-position:54% 100%}
+					100%{background-position:47% 0%}
+			}
+		}
+		
+		.login-container { 
+			height: 100%;
+			position: relative;
+			z-index: 4;
+			display: flex;
+			justify-content: center;
+			padding: 0 10px;
+			margin: 0 auto;
+
+			.login-box {
+				padding-top: 16%;
+				display: block;
+				width: 380px;  //---input寬度---
+
+				.login-head-info{
+					position: fixed;
+					top: 15px;
+					left: 2%;
+					.back-to-login-section{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: #fff;
+						&:hover{
+							a{
+								color: lighten($blue-color,5%) ;
+								text-decoration: none;
+							}
+							svg{
+								color: lighten($blue-color,5%) ;
+							}
+						}
+						svg{
+							margin-right: 3px;
+						}
+					}
+				}
+
+				a{
+				color: white;
+				}
+
+				$login-border-color:rgba(255, 255, 255, 0.8);
+
+				.login-box-section{  //登入框背景
+					padding: 24px 34px 0 34px;
+					// border: 1.5px solid  $login-border-color;
+					// border-radius: 6px;
+					// background: rgba(255, 255, 255, 0.1);
+					.title{
+						color: #fff;
+						font-size: 16px;
+						padding: 14px 0;
+					}
+					.has-send{
+						color: #fff;
+						font-size: 14px;
+						padding: 14px 0;
+					}
+					input{
+						width: 100%;
+						height: 44px;
+						padding: 5px 5px 7px 5px;
+						border: 1.5px solid $login-border-color;
+						border-radius: 45px ;
+						background: transparent;
+						box-shadow: none;
+						color: #fff;
+						font-size: 13px;
+						letter-spacing: 2px;
+						font-family: "微軟正黑體", "Open Sans" ;
+						@media(max-width:480px){
+							width: 98%;
+						}
+					}
+			
+					#Email {
+						margin-bottom: 6px;
+						color: white;
+						background-image: url(https://res.cloudinary.com/manzur/image/upload/v1481795702/LoginPage/iconemail_gb1tbl.png);
+						background-position: 8px 5px;
+						background-repeat: no-repeat;
+						text-indent: 40px;
+					}
+
+					#Password {
+						margin-top: 6px;
+						margin-bottom: 15px;
+						background-image: url(https://res.cloudinary.com/manzur/image/upload/v1481795703/LoginPage/password_jfbvio.png);
+						background-position: 8px 5px;
+						background-repeat: no-repeat;
+						text-indent: 40px;
+					}	
+
+					.login-line{
+						height: 1.5px;
+						margin: 5px 0 1px 0;
+					}
+
+					#Login { //登入按鈕
+						width: 100%;
+						height: 38px;
+						margin-top: 12px;
+						margin-bottom: 22px;
+						border: none;
+						border-radius: 45px ;
+						color: #fff;
+						font-size: 12px;
+						outline: none;
+						border: 1.5px solid $login-border-color;
+						transition: background 1.2s ease;
+						background: linear-gradient(to right, $login-border-color 50%, transparent 50%);
+						background-size: 200%;
+						background-position: right;
+
+						&:hover{
+							background-position: left;
+							color: $primary-color-d-5;
+						}
+						@media(max-width:480px){
+							width: 98%;
+						}
+					}
+
+					.error-text-box{
+						color: rgb(192, 59, 41);
+						font-size: 15px;
+						font-weight: bold;
+						font-family: "微軟正黑體", "Open Sans" ;
+						display: flex;
+						align-items: center;
+						padding-left: 8px;
+						justify-content: center;
+						.pe-7s-attention{
+							// font-weight: bold;
+							font-size: 16px;
+							padding-right: 6px;
+						}
+						.err-text{
+							padding-right:8px;
+						}
+					}
+			 	}
+			}
+		}
+	}
+
+
+	
+
+// `7MM"""Mq.`7MMF'     A     `7MF'`7MM"""Yb.   
+//   MM   `MM. `MA     ,MA     ,V    MM    `Yb. 
+//   MM   ,M9   VM:   ,VVM:   ,V     MM     `Mb 
+//   MMmmdM9     MM.  M' MM.  M'     MM      MM 
+//   MM  YM.     `MM A'  `MM A'      MM     ,MP 
+//   MM   `Mb.    :MM;    :MM;       MM    ,dP' 
+// .JMML. .JMM.    VF      VF      .JMMmmmdP'   
+
+
+	// @media(max-width: 768px) {
+	// 		.login-box {
+	// 			padding-top: 40% !important;
+	// 		}
+	// }
+
+
+	@media(max-width: 480px) {
+		.login-box {
+			padding-top: 50% !important;
+			.login-box-section{
+				padding: 24px 6px 0  !important;
+			}
+		}
+	}
+
+
+
+
+// // fonts
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+
+
+
+// .login__section {
+//   // background-image: linear-gradient(90deg, #008E9B, rgba(61, 148, 160, 0.925), rgb(110, 165, 158));
+//   background: linear-gradient(312.45deg, #2A71DB 4.58%, 
+//   rgba(121, 86, 153, 0.929132) 46.32%, 
+//   rgba(172, 69, 110, 0.883229) 81.13%, 
+//   rgba(253, 42, 42, 0.81) 94.8%);
+
+//   height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   @media (max-width:440px){
+//     padding: 0 15px;
+//   }
+
+// }
+
+// .login__card {
+  
+//   background: #ffffff48;
+//   border-radius: 3px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   width: 400px;
+//   padding: 40px;
+//   border-radius: 6px;
+  
+//   @media (max-width:440px){
+//     padding: 40px 20px;
+//   }
+//   background:linear-gradient(145deg,
+//   rgba(141, 206, 223, 0.4),
+//   rgba(126, 198, 216, 0.6),
+//   rgba(136, 203, 218, 0.4),
+//   rgba(147, 217, 235, 0.6),
+//   rgba(145, 204, 219, 0.4) );
+//   background-size: 250% 250%;
+//   animation: Gradient 5s infinite;
+//   @keyframes Gradient {
+//     0% {
+//       background-position: 0% 0%
+//     }
+//     50% {
+//       background-position: 0% 50%
+//     }
+//     75% {
+//       background-position: 100% 50%
+//     }
+//     100% {
+//       background-position: 0% 50%
+//     }
+//   }
+// }
+
+// .login__label {
+//   color: #fff;
+//   font-size: 14px;
+//   // font-family: "Lato";
+//   font-weight: 600;
+//   margin: 8px 0;
+//   font-family: "微軟正黑體", "Open Sans";
+//   letter-spacing: 1px;
+//   text-align: center !important;
+// }
+
+// .login__input {
+//   border-radius: 3px;
+//   border: none;
+//   padding: 0 10px;
+//   // font-family: "Lato";
+//   height: 30px;
+//   letter-spacing: 2px;
+//   font-weight: bold;
+//   color: rgb(36, 86, 143);
+   
+//   &:focus {
+//     outline: 0;
+//   }
+// }
+
+// .error-text-box{
+//   color: rgb(212, 57, 83);
+//   font-weight: bold;
+//   font-family: "微軟正黑體", "Open Sans" ;
+//   display: flex;
+//   align-items: center;
+//   padding-left: 8px;
+//   .pe-7s-attention{
+//     font-weight: bold;
+//     font-size: 16px;
+//     padding-right: 6px;
+//   }
+//   .err-text{
+//     padding-right:8px;
+//   }
+// }
+
+// .login__button {
+//   border: none;
+//   border-radius: 3px;
+//   color: #ffffff;
+//   letter-spacing: 2px;
+//   text-transform: uppercase;
+//   margin-top: 15px;
+//   background-image: linear-gradient(90deg, rgb(69, 135, 139), rgba(80, 140, 151, 0.945), rgb(75, 135, 146));
+//   height: 38px;
+//   font-size: 14px;
+//   font-family: "微軟正黑體", "Open Sans" ;
+//   font-weight: bold;
+
+
+
+
+//   &:hover{
+//     background-image: linear-gradient(90deg, rgb(66, 120, 129), rgba(66, 117, 129, 0.945), rgb(61, 126, 131));
+//   }
+
+//   &:focus{
+//     outline: none!important;
+//   }
+
+//   &.active {
+    
+//     font-size: 0;
+//     height: 38px;
+//     width: 38px;
+//     margin: 12px auto 0 auto;
+//     animation: animate-circle 1.5s;
+//     animation-fill-mode: both;
+
+//     &::after { 
+//       content: url(https://upload.wikimedia.org/wikipedia/commons/archive/1/13/20180609142006%21OOjs_UI_icon_check-invert.svg);
+//       color: white;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//     }
+//   }
+  
+// }
+
+// // Animations
+// @keyframes animate-circle {
+  
+//   0% {
+    
+//     width: 100%;
+//     border-radius: 2px;
+    
+//   } 
+//   45% {
+    
+//     width: 38px;
+//   }
+  
+//   100% {
+//     border-radius: 10%;
+//   }
+// }

@@ -1,0 +1,407 @@
+// Mixin for generating new styles
+@mixin btn-styles($btn-color, $btn-states-color) {
+  border-color: $btn-color;
+  color: $btn-color;
+  border-radius: $button-border-radius;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-color: $transparent-bg;
+    color: $btn-states-color;
+    border-color: $btn-states-color;
+  }
+
+  &.disabled,
+  &:disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $transparent-bg;
+          border-color: $btn-color;
+    }
+  }
+
+
+  &.btn-fill {
+    color: $white-color;
+    background-color: $btn-color;
+    @include opacity(1);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle{
+        background-color: $btn-states-color;
+        color: $white-color;
+    }
+
+    .caret{
+        border-top-color: $white-color;
+    }
+  }
+
+  .caret{
+      border-top-color: $btn-color;
+  }
+}
+
+
+@mixin btn-size($padding-vertical, $padding-horizontal, $font-size){
+   font-size: $font-size;
+   padding: $padding-vertical $padding-horizontal;
+
+   &.btn-rectangle{
+       padding: $padding-vertical + 1 $padding-horizontal;
+   }
+
+   &.btn-simple{
+       padding: $padding-vertical + 2 $padding-horizontal;
+   }
+
+}
+
+.btn{
+  border-width: $border-thin;
+  background-color: $transparent-bg;
+  font-weight: $font-weight-normal;
+
+  @include opacity(.8);
+  padding: $padding-base-vertical $padding-base-horizontal;
+
+  @include btn-styles($default-color, $default-states-color);
+
+  &:hover,
+  &:focus{
+      @include opacity(1);
+      outline: 0 !important;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+       @include box-shadow(none);
+       outline: 0 !important;
+  }
+
+  &.btn-icon{
+      padding: $padding-base-vertical;
+  }
+
+}
+
+// Apply the mixin to the buttons
+//.btn-default { @include btn-styles($default-color, $default-states-color); }
+.btn-primary { @include btn-styles($primary-color, $primary-states-color); }
+.btn-success { @include btn-styles($success-color, $success-states-color); }
+.btn-info    { @include btn-styles($info-color, $info-states-color); }
+.btn-warning { @include btn-styles($warning-color, $warning-states-color); }
+.btn-danger  { @include btn-styles($danger-color, $danger-states-color); }
+.btn-neutral {
+  @include btn-styles($white-color, $white-color);
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle{
+       background-color: $white-color;
+       color: $default-color;
+  }
+
+  &.btn-fill,
+  &.btn-fill:hover,
+  &.btn-fill:focus{
+      color: $default-color;
+  }
+
+  &.btn-simple:active,
+  &.btn-simple.active{
+      background-color: transparent;
+  }
+}
+
+.btn{
+   &:disabled,
+   &[disabled],
+   &.disabled{
+      @include opacity(.5);
+  }
+}
+.btn-rectangle{
+  border-width: $border-thin;
+  border-radius: $btn-rectangle-radius !important;
+  padding: $padding-round-vertical $padding-round-horizontal;
+
+  &.btn-icon{
+      padding: $padding-round-vertical;
+  }
+}
+.btn-round{
+  border-width: $border-thin;
+  border-radius: 50%;
+  padding: $padding-round-vertical $padding-round-horizontal;
+
+  &.btn-icon{
+      padding: $padding-round-vertical;
+  }
+}
+.btn-simple{
+  border: $none;
+  font-size: $font-size-medium;
+  padding: $padding-base-vertical $padding-base-horizontal;
+
+  &.btn-icon{
+      padding: $padding-base-vertical;
+  }
+}
+.btn-lg{
+ @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large);
+ font-weight: $font-weight-normal;
+}
+.btn-sm{
+  @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-small);
+}
+.btn-xs {
+  @include btn-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small);
+}
+.btn-wd {
+  min-width: 140px;
+}
+
+.btn-group.select{
+  width: 100%;
+}
+.btn-group.select .btn{
+  text-align: left;
+}
+.btn-group.select .caret{
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  right: 8px;
+}
+
+.buttons-with-margin .btn {
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+ /////////////////////////   自訂樣式 ↓  /////////////////////////
+
+.card-submit-btn{ //表單底部submit按鈕  ex:關閉、等待、確認
+  padding: 0 30px;
+  margin-top: 14px;
+  border: 1.5px solid $primary-color;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: $primary-text-color ;
+  background: transparent;
+  transition: .2s;
+  &:hover{
+    background: $btn-bg-hover-color ;
+    border: 1.5px solid $btn-bg-hover-color ;
+    color: $primary-text-active-color ;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+.table-small-btn{ //表格內小按鈕
+  margin: 0 auto;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3px 4px !important;
+  border-radius: 3px;
+  border:none;
+  background: $btn-bg-color ;
+  // color: $primary-text-color ;
+  font-size: 8px !important;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: .2s;
+  svg{
+    width: 14px;
+    height: 14px;
+    // color: $primary-text-color ;
+  }
+  &:hover{
+    background: $btn-bg-hover-color ;
+    color:$primary-text-active-color ;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+
+.detail-btn{ //具有連結作用
+  display: flex;
+  margin: 0 auto;
+  padding: 0;  //pending要給0，才能把連結範圍撐大、容易點擊
+  border-radius: 3px;
+  border:none;
+  background: $btn-bg-color ;
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    height: 20px;
+    width: 20px;
+    svg{
+      font-size: 16px;
+      color: $primary-text-color ;
+    }
+  }
+  &:hover{
+    background: $btn-bg-hover-color ;
+    a{
+      svg{
+        color:$primary-text-active-color !important;
+      }
+    }
+  }
+  &:focus{
+    outline: none;
+    color:$primary-text-active-color ;
+  }
+}
+
+.table-small-done{ // 表單內已完成的狀態，刻意讓Hover效果維持原樣
+  color: $text-green ;
+  &:hover{
+    cursor: default !important;
+    background: $btn-bg-color !important; 
+    color: $text-green  !important; 
+  }
+}
+
+.table-small-fail { // 表單內已失敗、逾時的狀態，刻意讓Hover效果維持原樣
+  color: $text-red ;
+  pointer-events: none;
+  &:hover{
+    cursor: default !important;
+    background: $btn-bg-color !important; 
+    color: $text-red  !important; 
+  }
+}
+
+.btn-small-not-yet{ //表單內，對方還未上傳、分配時，無法點開的狀態
+  background: $table-header-bg-color  !important;
+  pointer-events: none;
+  svg{
+    color: $primary-color-l-25 ;
+  }
+}
+
+.btn-delete{
+  &:hover{
+    background: $text-red !important;
+  }
+}
+
+.btn-icon{
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  svg{
+    font-size: 16px;
+  }
+}
+
+.btn-table-link{ //表單button型式的放大鏡連結 (Link不適用)
+  margin: 0 auto;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3px 4px !important;
+  border-radius: 3px;
+  border:none;
+  background: transparent ;
+  color: $primary-text-color !important;
+  font-size: 8px !important;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: .2s;
+  svg{
+    width: 14px;
+    height: 14px;
+  }
+  &:hover{
+    color: $blue-color !important;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+.btn-page-link{  //放大鏡的跳轉按鈕
+  color: $primary-text-color !important;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+    color:$blue-color !important;
+  }
+}
+
+
+.lastpage-btn{ //返回上一頁按鈕
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 6px 8px !important;
+  background:$btn-bg-color;
+  border: none;
+  border-radius: 5px;
+  color: $primary-text-color ;
+  font-weight: bold;
+  font-size: calc(0.8em);
+  transition: .3s;
+  &:hover{
+    color:$primary-text-active-color ;
+    background: $btn-bg-hover-color;
+  }
+  &:focus{
+    outline: none;
+  }
+  .lastpage-icon{
+    font-size: calc(1.2em);
+    margin-right: 3px;
+  }
+}
+
+.btn-open-serial-number{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 22px;
+  line-height: 18px;
+  background: $btn-bg-color ;
+  border: none;
+  border-radius: 3px;
+  text-align: center ;
+  padding: 2px 0;
+  svg{
+    line-height: 18px;
+  }
+  &:hover{
+    color: $primary-text-active-color ;
+    background: $btn-bg-hover-color ;   
+  }
+  &:focus{
+    outline: none;
+  }
+}
